@@ -17,7 +17,7 @@ FROM debian:bookworm
 WORKDIR /app
 
 # Copy only the necessary files from the build stage
-COPY --from=builder /app/myapp /app/myapp
+COPY --from=builder /app/authorizationservice /app/authorizationservice
 
 # Expose the port the application runs on
 EXPOSE 80
