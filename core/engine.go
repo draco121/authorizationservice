@@ -9,8 +9,8 @@ func authorizationEngine(allowedActions []constants.Action, requiredActions []co
 	if slices.Contains(allowedActions, constants.All) {
 		return true
 	} else {
-		for i := range allowedActions {
-			if !slices.Contains(requiredActions, allowedActions[i]) {
+		for i := range requiredActions {
+			if !slices.Contains(allowedActions, requiredActions[i]) {
 				return false
 			}
 		}
