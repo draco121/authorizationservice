@@ -6,6 +6,9 @@ import (
 )
 
 func authorizationEngine(allowedActions []constants.Action, requiredActions []constants.Action) bool {
+	if len(requiredActions) == 0 || requiredActions == nil {
+		return false
+	}
 	if slices.Contains(allowedActions, constants.All) {
 		return true
 	} else {
